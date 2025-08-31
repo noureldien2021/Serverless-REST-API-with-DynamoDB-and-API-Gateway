@@ -23,13 +23,18 @@
 # Solution Overview
 
 **Description**
-Create a serverless image processing application where users upload images to an S3 bucket, triggering an AWS Lambda function that processes and resizes the images before storing them in another S3 bucket.
+Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB to manage a simple to-do list or customer records. The API allows users to create, read, update, and delete (CRUD) data without managing servers.
+
 
 **Key AWS Services Used**
 
-1. Amazon S3: Stores original and processed images.
-2. AWS Lambda: Executes image processing (resize, watermarking).
-3. Amazon DynamoDB: Store metadata about uploaded images.
+1. Amazon API Gateway: Exposes REST endpoints.
+2. AWS Lambda: Handles API requests (CRUD operations).
+3. Amazon DynamoDB: NoSQL database for storing records.
+4. AWS IAM: Controls access via roles and permissions.
+5. Amazon CloudWatch: Logs and monitors API activity.
+6. S3: to host the front-end of your application 
+
 
 
 
@@ -82,9 +87,11 @@ Create a serverless image processing application where users upload images to an
 5. Metadata is saved to DynamoDB (optional).  
 
 # Learning Outcomes
-1. Building event-driven architectures with Lambda and S3 triggers.
-2. Understanding cost-efficient, auto-scaling serverless applications.
-3. Enhancing security using IAM roles and S3 bucket policies.
+1. Designing scalable, event-driven serverless applications.
+2. Implementing API Gateway with Lambda for stateless execution
+3. Using DynamoDB as a managed NoSQL database with best practices.
+4. Securing APIs with IAM roles and resource policies.
+
 
 
 
