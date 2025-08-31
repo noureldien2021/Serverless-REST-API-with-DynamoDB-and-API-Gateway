@@ -39,7 +39,7 @@ Create a serverless image processing application where users upload images to an
 
 # AWS Services Used
 
-#### Amazon S3
+#### Amazon-API-Gateway
 
 1. S3 stores data as **objects**.  
 2. SSE-S3 (Server-Side Encryption) → AWS manages the keys (default option).
@@ -59,6 +59,20 @@ Create a serverless image processing application where users upload images to an
 1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
 2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
 
+
+#### AWS IAM
+1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
+2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
+
+
+#### Amazon CloudWatch
+1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
+2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
+
+
+#### Amazon S3
+1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
+2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
 
 # WorkFlow
 1. Upload image to source S3 bucket.  
