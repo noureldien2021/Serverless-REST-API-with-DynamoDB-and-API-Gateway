@@ -1,12 +1,15 @@
-## Serverless Image Processing with S3 and Lambda
+## Serverless REST API with DynamoDB and API Gateway
 
 ## Table of Content
 - [Solution Overview](#solution-overview)
 - [Architecture Diagram](#architecture-diagram)
 - [AWS Services Used](#aws-services-used)
-  - [Amazon S3](#amazon-s3)
+  - [Amazon API Gateway](#Amazon-API-Gateway)
   - [AWS Lambda](#aws-lambda)
   - [Amazon DynamoDB](#amazon-dynamodb)
+  - [AWS IAM](#AWS-IAM)
+  - [Amazon CloudWatch](#Amazon-CloudWatch)
+  - [Amazon S3](#Amazon-S3)
 - [WorkFlow](#WorkFlow)
 - [Learning Outcomes](#Learning-Outcomes)
 - [Demo Link](#demo-link)
