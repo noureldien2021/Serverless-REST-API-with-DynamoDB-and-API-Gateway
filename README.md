@@ -62,11 +62,8 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 
 
 #### AWS IAM
-1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
-2. Provides fast and predictable performance for CRUD operations
-3. Integrates seamlessly with AWS Lambda for serverless backend operations
-4. Ensures high availability and durability of data across multiple Availability Zones
-
+1. Grants Lambda functions the necessary permissions to interact with DynamoDB.
+2. Follows the principle of least privilege to enhance security
 
 #### Amazon CloudWatch
 1. Monitors and logs all API requests and Lambda function executions.
