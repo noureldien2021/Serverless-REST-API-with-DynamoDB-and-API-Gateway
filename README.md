@@ -52,7 +52,7 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 #### AWS Lambda
 1. Executes the backend logic for all CRUD operations (Create, Read, Update, Delete)
 2. Processes incoming requests from API Gateway and interacts with DynamoDB
-3. **Requires IAM role permissions** to access the DynamoDB.
+3. Requires IAM role permissions to access the DynamoDB.
 
 #### Amazon DynamoDB
 1. Serves as a NoSQL database to store application data (To-Do items)
