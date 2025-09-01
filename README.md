@@ -22,7 +22,7 @@
 
 # Solution Overview
 
-**Description**
+**Description:**
 Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB to manage a simple to-do list. The API allows users to create, read, update, and delete (CRUD) data without managing servers.
 
 
