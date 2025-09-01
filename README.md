@@ -2,7 +2,6 @@
 
 ## Table of Content
 - [Solution Overview](#solution-overview)
-- [Architecture Diagram](#architecture-diagram)
 - [AWS Services Used](#aws-services-used)
   - [Amazon API Gateway](#Amazon-API-Gateway)
   - [AWS Lambda](#aws-lambda)
