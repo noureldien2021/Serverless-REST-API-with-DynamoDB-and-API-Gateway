@@ -55,7 +55,7 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 
 #### Amazon DynamoDB
 1. Serves as a NoSQL database to store application data (To-Do items)
-2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
+2. Provides fast and predictable performance for CRUD operations
 
 #### AWS IAM
 1. Grants Lambda functions the necessary permissions to interact with DynamoDB.
