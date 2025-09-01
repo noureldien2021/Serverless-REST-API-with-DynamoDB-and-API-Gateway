@@ -69,6 +69,9 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 2. Provides a highly available and durable storage solution for static files
 
 # WorkFlow
+1. User interacts with the webpage stored in an S3 bucket.
+2. User sends requests to the API, and the API triggers Lambda functions.
+3. Lambda processes Create, Read, Update, Delete (CRUD) requests and stores the data in DynamoDB.
 
 ![Architecture Diagram](https://github.com/noureldien2021/Serverless-REST-API-with-DynamoDB-and-API-Gateway/blob/main/workflow.png) 
 
