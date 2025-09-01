@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serverless To-Do List </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white text-center py-4 shadow-md">
+    <h1 class="text-2xl font-bold">Serverless To-Do List</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-1 p-6">
+    <!-- Form Section -->
+    <div class="flex-1">
+      <h2 class="text-xl font-semibold mb-4">Add a new task</h2>
+      <form id="todoForm" class="flex gap-3 mb-6">
+        <input type="text" id="taskInput" placeholder="Enter your task..."
+          class="flex-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button type="submit"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow-md transition">
+          Create
+        </button>
+      </form>
+    </div>
+
+    <!-- To-Do List Section -->
+    <div class="w-1/3 bg-white shadow-lg rounded-lg p-4 ml-6">
+      <h2 class="text-lg font-semibold mb-4">Your List</h2>
+      <ul id="taskList" class="space-y-3">
+        <!-- Tasks will appear here -->
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    const API_BASE = "https://msqqyesfr2.execute-api.us-east-1.amazonaws.com/dev/tasks";
+    const form = document.getElementById("todoForm");
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+
+    // Fetch all tasks
+    async function fetchTasks() {
+      const res = await fetch(API_BASE);
+      const tasks = await res.json();
+      taskList.innerHTML = "";
+
+      tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.className = "flex justify-between items-center bg-gray-100 px-4 py-2 rounded-lg shadow-sm";
+
+        li.innerHTML = `
+          <span class="task-text flex-1">${task.title}</span>
+          <div class="flex gap-2">
+            <button onclick="editTask('${task.id}', this)" 
+                    class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded shadow transition">
+              Edit
+            </button>
+            <button onclick="deleteTask('${task.id}')" 
+                    class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded shadow transition">
+              Delete
+            </button>
+          </div>
+        `;
+        taskList.appendChild(li);
+      });
+    }
+
+    // Add new task
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const title = taskInput.value.trim();
+      if (!title) return;
+
+      await fetch(API_BASE, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title })
+      });
+
+      taskInput.value = "";
+      fetchTasks();
+    });
+
+    // Inline Edit Task
+    function editTask(id, button) {
+      const li = button.parentElement.parentElement;
+      const span = li.querySelector(".task-text");
+
+      if (li.querySelector("input")) return; // لو فيه إنبوت مفتوح
+
+      const input = document.createElement("input");
+      input.type = "text";
+      input.value = span.textContent;
+      input.className = "px-2 py-1 border rounded w-full";
+
+      li.replaceChild(input, span);
+      input.focus();
+
+      input.addEventListener("blur", () => saveEdit(id, li, input));
+      input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") saveEdit(id, li, input);
+      });
+    }
+
+    async function saveEdit(id, li, input) {
+      const newTitle = input.value.trim() || "Untitled Task";
+
+      await fetch(`${API_BASE}/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: newTitle })
+      });
+
+      const span = document.createElement("span");
+      span.className = "task-text flex-1";
+      span.textContent = newTitle;
+      li.replaceChild(span, input);
+    }
+
+    // Delete task
+    async function deleteTask(id) {
+      await fetch(`${API_BASE}/${id}`, { method: "DELETE" });
+      fetchTasks();
+    }
+
+    // Load on start
+    fetchTasks();
+  </script>
+</body>
+</html>
