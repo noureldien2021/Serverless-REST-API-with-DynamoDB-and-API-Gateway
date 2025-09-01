@@ -46,38 +46,37 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 
 #### Amazon-API-Gateway
 
-1. S3 stores data as **objects**.  
-2. SSE-S3 (Server-Side Encryption) → AWS manages the keys (default option).
-3. In this project, S3 stores both **original uploaded images** and **processed images** in separate buckets.
-4. S3 integrates seamlessly with Lambda to **trigger image processing automatically** when a new file is uploaded.
-
+1. Exposes RESTful endpoints for the front-end to interact with the backend  
+2. Integrates seamlessly with AWS Lambda and other AWS services for a serverless architecture.
 
 #### AWS Lambda
 
-1. AWS Lambda is a **serverless compute service** that runs your code without provisioning or managing servers.
-2. In this project, Lambda is **triggered automatically** when a new image is uploaded to the S3 bucket.
-3. It performs **image processing tasks** such as resizing and watermarking.
-4. **Requires IAM role permissions** to access the source and destination S3 buckets.
+1. Executes the backend logic for all CRUD operations (Create, Read, Update, Delete)
+2. Processes incoming requests from API Gateway and interacts with DynamoDB
+3. **Requires IAM role permissions** to access the DynamoDB.
 
 
 #### Amazon DynamoDB
-1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
+1. Serves as a NoSQL database to store application data (To-Do items or customer records)
 2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
 
 
 #### AWS IAM
 1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
-2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
+2. Provides fast and predictable performance for CRUD operations
+3. Integrates seamlessly with AWS Lambda for serverless backend operations
+4. Ensures high availability and durability of data across multiple Availability Zones
 
 
 #### Amazon CloudWatch
-1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
-2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
+1. Monitors and logs all API requests and Lambda function executions.
+2. Provides insights into application performance and latency
+3. Helps in detecting errors, failures, and unusual activity in real time
 
 
 #### Amazon S3
-1. Amazon DynamoDB is a **fully managed NoSQL database** that provides fast and predictable performance.
-2. In this project, DynamoDB is used to **store metadata** about uploaded images (e.g., filename, size, timestamp).
+1. Hosts the front-end of the application (HTML, CSS, JavaScript)
+2. Provides a highly available and durable storage solution for static files
 
 # WorkFlow
 1. Upload image to source S3 bucket.  
