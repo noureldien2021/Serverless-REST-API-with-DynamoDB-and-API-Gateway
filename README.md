@@ -77,7 +77,8 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 2. Lambda is triggered automatically.  
 3. Image is processed (resize, watermark).  
 4. Processed image is saved to destination bucket.  
-5. Metadata is saved to DynamoDB (optional).  
+5. Metadata is saved to DynamoDB (optional).
+![Architecture Diagram](https://github.com/noureldien2021/Serverless-REST-API-with-DynamoDB-and-API-Gateway/blob/main/workflow.png) 
 
 # Learning Outcomes
 1. Designing scalable, event-driven serverless applications.
