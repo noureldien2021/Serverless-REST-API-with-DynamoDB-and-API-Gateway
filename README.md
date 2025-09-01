@@ -27,8 +27,8 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 
 
 
-**Key AWS Services Used**
 
+**Key AWS Services Used**
 1. **Amazon API Gateway**: Exposes REST endpoints.
 2. **AWS Lambda**: Handles API requests (CRUD operations).
 3. **Amazon DynamoDB**: NoSQL database for storing records.
