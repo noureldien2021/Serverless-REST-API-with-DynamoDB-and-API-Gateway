@@ -33,7 +33,7 @@ Develop a serverless REST API using Amazon API Gateway, AWS Lambda, and DynamoDB
 3. **Amazon DynamoDB**: NoSQL database for storing records.
 4. **AWS IAM**: Controls access via roles and permissions.
 5. **Amazon CloudWatch**: Logs and monitors API activity.
-6. **S3**: to host the front-end of your application 
+6. **S3**: to host the front-end of my application 
 
 
 
